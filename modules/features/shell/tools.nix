@@ -1,0 +1,1 @@
+#TODO - (bat, jq, lsof, ncdu, tree, rsync, file, unzip, zip, 7z, curl, wget, ripgrep, nano , gping etc)
