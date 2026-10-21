@@ -21,11 +21,10 @@
       cunit
     ];
 
-  # various versions for dat minecraft :sunglasses:
   programs.java = {
     enable = true;
-    package = [pkgs.jdk25, pkgs.jdk21, pkgs.jdk17, pkgs.jdk16, pkgs.jdk8];
-  }
+    package = pkgs.jdk25;
+  };
 
     # lets dev shells load automatically when you cd into a project
     programs.direnv = {

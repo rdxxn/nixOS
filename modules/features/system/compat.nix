@@ -1,4 +1,5 @@
 # https://wiki.nixos.org/wiki/Nix-ld
+{pkgs, ...}:
 {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
