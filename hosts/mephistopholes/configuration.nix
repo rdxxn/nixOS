@@ -1,58 +1,33 @@
-{ config, pkgs, ... }:
-
+{ ... }:
 {
   imports = [
-    #./hardware-configuration.nix
-
-    #../../modules/base.nix
-    #../../modules/desktop.nix
-    #../../modules/networking.nix
-    #../../modules/audio.nix
-    #../../modules/development.nix
+    ./hardware-configuration.nix
+    #../../modules/features/system/snapshots.nix
   ];
 
-  # -------------------------
-  # Machine-specific configuration
-  # -------------------------
-
-  networking.hostName = "mephistopholes";
-
-  # allows updating device firmware including uefi
+  # allows updating device firmware included uefi
   services.fwupd.enable = true;
 
-  hardware.graphics.enable = true;
-
-  # Prevents overheating (intel only)
+  # prevents overheating (intel only)
   services.thermald.enable = true;
 
-  # Power management
+  # tlp for battery life. It conflicts with power-profiles-daemon and tuned, so neither is enabled.
   services.tlp.enable = true;
-  services.tuned.enable = true;
+  services.power-profiles-daemon.enable = false;
 
-  # Handles closing the laptop lid
-    services.logind.settings.Login = {
-    HandleLidSwitch = "suspend";
+  # handles closing the lid
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
     HandleLidSwitchExternalPower = "suspend";
     HandleLidSwitchDocked = "ignore";
   };
 
-  # -------------------------
-  # Boot
-  # -------------------------
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # -------------------------
-  # Nix
-  # -------------------------
-
-  # Optimise store on each build (slows it down a bit)
-  nix.settings.auto-optimise-store = true;
-
-  # -------------------------
-  # State version
-  # -------------------------
+  # Hibernate 5 minutes after suspending when undocked and no external power
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "10min";
+  };
 
   system.stateVersion = "26.05";
+
+  # TODO - sway three finger swipe to swap workspaces
 }

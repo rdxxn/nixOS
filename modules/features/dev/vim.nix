@@ -1,11 +1,11 @@
-{lib, pkgs, ...}:
+{ pkgs, username, ... }:
 {
-  programs.neovim.enable = true;
-  programs.vim.enable = true;
+  home-manager.users.${username} = {
+    programs.neovim.enable = true;
+    programs.vim.enable = true;
 
-  home.packages = with pkgs; [
-    tree-sitter
-  ];
+    home.packages = [ pkgs.tree-sitter ];
+  };
 
-  # https://github.com/pfassina/lazyvim-nix use this nix flake for lazyvim?
+    # TODO - https://github.com/pfassina/lazyvim-nix use this nix flake for lazyvim maybe?
 }

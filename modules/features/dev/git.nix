@@ -1,6 +1,6 @@
-{pkgs, ...}:
+{ username, ... }:
 {
-  programs = {
+  home-manager.users.${username}.programs = {
     git.enable = true; # TODO ssh keys/identity
     delta = {
       enable = true;

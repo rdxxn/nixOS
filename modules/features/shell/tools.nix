@@ -1,1 +1,22 @@
-#TODO - (bat, jq, lsof, ncdu, tree, rsync, file, unzip, zip, 7z, curl, wget, ripgrep, nano , gping etc)
+{ pkgs, username, ... }:
+{
+  home-manager.users.${username} = {
+    programs = {
+      btop.enable = true;
+      fastfetch.enable = true;
+    };
+
+    home.packages = with pkgs; [
+      lsof
+      ncdu
+      tree
+      file
+      unzip
+      zip
+      _7zz
+      wget
+      gping
+      ripgrep
+    ];
+  };
+}

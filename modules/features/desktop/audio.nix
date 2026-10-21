@@ -1,6 +1,6 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
-  # allows trusted applications real-time scheduling priority - good for audio
+  # real-time scheduling priority for trusted applications, good for audio
   security.rtkit.enable = true;
 
   services.pipewire = {

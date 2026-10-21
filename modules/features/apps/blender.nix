@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, username, ... }:
 {
-  home.packages = [pkgs.blender];
+  home-manager.users.${username}.home.packages = [ pkgs.blender ];
 }

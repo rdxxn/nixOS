@@ -1,9 +1,12 @@
-{pkgs, ...}:
+{ pkgs, username, ... }:
 {
-  programs.mpv.enable = true;
-  # if nixpkgs has unfree codecs install vlc too
-  home.packages = with pkgs; [
-    imv
-    ffmpeg
-  ];
+  home-manager.users.${username} = {
+    programs.mpv.enable = true;
+
+    home.packages = with pkgs; [
+      imv
+      ffmpeg
+      vlc
+    ];
+  };
 }
