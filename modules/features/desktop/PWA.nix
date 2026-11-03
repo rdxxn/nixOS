@@ -11,9 +11,9 @@
     in
     {
       xdg.desktopEntries = {
-    proton-mail = entry "Proton Mail" "librewolf --new-window https://mail.proton.me" "mail-message-new";
-    pulsar-configurator = entry "Pulsar Configurator" "${chromium} --app=https://bbb.pulsar.gg" "input-mouse";
-      # TODO - add via
+        proton-mail = entry "Proton Mail" "librewolf --new-window https://mail.proton.me" "mail-message-new";
+        pulsar-configurator = entry "Pulsar Configurator" "${chromium} --app=https://bbb.pulsar.gg" "input-mouse";
+        via = entry "via" "${chromium} --app=https://usevia.app" "input-keyboard";
       };
     };
 }

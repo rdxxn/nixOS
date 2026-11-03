@@ -8,7 +8,5 @@
       theme = "catppuccin-mocha";
       show_startup_tips = false;
     };
-
-    # TODO - ENABLE TMUX MODE IN CONFIG 
   };
 }

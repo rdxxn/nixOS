@@ -24,7 +24,6 @@
         projects = "${home}/Projects";
 
         # written to user-dirs.dirs as XDG_<NAME>_DIR and created too
-        # TODO - move grimslurp dir to screenshots
         extraConfig = {
           SCREENSHOTS = "${home}/Screenshots";
           VAULT = "${home}/Vault";

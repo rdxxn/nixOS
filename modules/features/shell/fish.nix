@@ -32,7 +32,6 @@
       end
     '';
 
-    # TODO - Add others
     functions = {
       bios = {
         description = "alias bios=sudo systemctl reboot --firmware-setup";
@@ -45,10 +44,12 @@
         description = "build and switch to the new system config";
         body = "nh os switch $argv";
       };
+
       build = {
         description = "build the system config without activating it";
         body = "nh os build $argv";
       };
+
       vm = {
         description = "build this host's config as a VM and boot it (safe place to test changes)";
         body = ''
@@ -60,10 +61,77 @@
         '';
       };
 
-      fsync = {
-        description = "mirror SRC into DEST with progress (SRC/ = its contents, SRC = the folder itself)";
-        body = "rsync -ah --info=progress2 --partial $argv";
+      mirror = {
+        description = "mirror SRC to DEST, only copying changes (SRC/ = contents, SRC = folder)";
+        body = "rsync -ah --info=progress2 --partial --delete $argv && sync";
       };
+
+      flatseal = {
+        description = "alias flatseal=flatpak run com.github.tchx84.Flatseal";
+        wraps = "flatpak run com.github.tchx84.Flatseal";
+        body = "flatpak run com.github.tchx84.Flatseal $argv";
+      };
+
+      fzfcd = {
+        description = "fzf picker that cds into the selected dir (or its parent if a file)";
+        body = ''
+          set -l selected (fzf --preview 'if test -d {}; ls -la {}; else; bat --color=always {}; end')
+          if test -n "$selected"
+            if test -d "$selected"
+              cd "$selected"
+            else
+              cd (dirname -- "$selected")
+            end
+          end
+        '';
+      };
+
+      fzfnvim = {
+        description = "fzf + nvim";
+        body = ''
+          set -l file (fzf --preview 'bat --color=always {}')
+          if test -n "$file"
+            nvim "$file"
+          end
+        '';
+      };
+
+      fzfvim = {
+        description = "fzf + vim";
+        body = ''
+          set -l file (fzf --preview 'bat --color=always {}')
+          if test -n "$file"
+            vim "$file"
+          end
+        '';
+      };
+
+      mpv-tracker = {
+        description = "alias mpv-tracker=~/.local/bin/mpv-tracker";
+        wraps = "~/.local/bin/mpv-tracker";
+        body = "~/.local/bin/mpv-tracker $argv";
+      };
+
+      sudofzfnvim = {
+        description = "fzf + sudo nvim";
+        body = ''
+          set -l file (fzf --preview 'bat --color=always {}')
+          if test -n "$file"
+            sudo nvim "$file"
+          end
+        '';
+      };
+
+      sudofzfvim = {
+        description = "fzf + sudo vim";
+        body = ''
+          set -l file (fzf --preview 'bat --color=always {}')
+          if test -n "$file"
+            sudo vim "$file"
+          end
+        '';
+      };
+
     };
   };
 }

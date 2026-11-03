@@ -12,7 +12,4 @@
       pkgs.nil 
       ];
   };
-
-    # TODO - https://github.com/pfassina/lazyvim-nix use this nix flake for lazyvim maybe?
-    # OR MAYBE IN ~/dots/nvim/*
 }

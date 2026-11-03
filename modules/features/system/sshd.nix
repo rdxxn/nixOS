@@ -1,4 +1,3 @@
-# opt in, (laptop on eduroam shouldnt)
 { username, ... }:
 {
   services.openssh = {

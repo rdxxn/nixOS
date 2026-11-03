@@ -21,26 +21,25 @@
     ./features/desktop/flatpak.nix
     ./features/desktop/fonts.nix
     ./features/desktop/greeter.nix
-    ./features/desktop/gtk-theme.nix
+    ./features/desktop/theme.nix
     ./features/desktop/mime.nix
     ./features/desktop/niri.nix
     ./features/desktop/noctalia.nix
     ./features/desktop/sway.nix
     ./features/desktop/WM-helpers.nix
     ./features/desktop/thunar.nix
-    ./features/desktop/webapps.nix
-
+    ./features/desktop/PWA.nix
 
     ./features/shell/docs.nix
     ./features/shell/fish.nix
     ./features/shell/kitty.nix
-    ./features/shell/multiplexer.nix
+    ./features/shell/zellij.nix
     ./features/shell/nav.nix
     ./features/shell/tools.nix
     ./features/shell/yazi.nix
 
     ./features/dev/git.nix
-    ./features/dev/ide.nix
+    ./features/dev/vscodium.nix
     ./features/dev/podman.nix
     ./features/dev/toolchains.nix
     ./features/dev/vim.nix
