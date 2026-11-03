@@ -1,5 +1,3 @@
-# Other JDK versions (and project libraries) come from per-project dev shells:
-# two JDKs in one profile collide on bin/java.
 { pkgs, username, ... }:
 {
   home-manager.users.${username} = {
@@ -10,7 +8,7 @@
       meson
       ninja
       pkg-config
-      (python3.withPackages (ps: [ ps.pip ]))
+      (python3.withPackages (ps: [ ps.pip ])) # installs python with pip
       uv
       nodejs
       rustup
@@ -19,8 +17,10 @@
       bzip2
       xz
       cunit
+      junit
     ];
 
+  # additional MC jars come from prism launcher
   programs.java = {
     enable = true;
     package = pkgs.jdk25;

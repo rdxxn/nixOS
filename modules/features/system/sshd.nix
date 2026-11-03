@@ -9,8 +9,8 @@
     };
   };
 
-  # passwords off, you can only get in with a key
+  # passwordless, key only
   users.users.${username}.openssh.authorizedKeys.keys = [
-    # TODO "ssh-ed25519 AAAA..."
+    # TODO
   ];
 }

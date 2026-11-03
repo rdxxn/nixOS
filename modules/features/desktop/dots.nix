@@ -10,6 +10,9 @@
       # symlinks dots to a live checkout so noctalia and others can use/edit
       xdg.configFile = {
         "sway/config".source = link "sway/config";
+        "niri/config.kdl".source = link "niri/config.kdl";
+        "niri/keybinds.kdl".source = link "niri/keybinds.kdl";
+        "nvim".source = link "nvim"; # LazyVim, see dev/vim.nix
         "kitty/current-theme.conf".source = link "kitty/current-theme.conf";
         "kitty/themes/noctalia.conf".source = link "kitty/themes/noctalia.conf";
         "noctalia/noctalia-full-config.toml".source = link "noctalia/noctalia-full-config.toml";

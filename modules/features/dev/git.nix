@@ -1,7 +1,8 @@
 { username, ... }:
 {
+  # SSH/PGP keys on hw key
   home-manager.users.${username}.programs = {
-    git.enable = true; # TODO ssh keys/identity
+    git.enable = true;
     delta = {
       enable = true;
       enableGitIntegration = true;

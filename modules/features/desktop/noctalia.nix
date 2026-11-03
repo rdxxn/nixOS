@@ -1,9 +1,4 @@
-{
-  inputs,
-  pkgs,
-  username,
-  ...
-}:
+{ inputs, pkgs, username, ... }:
 {
   services.upower.enable = true;
   # power profiles are per host (PPD on the desktop, tlp on the laptop)

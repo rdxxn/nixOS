@@ -1,7 +1,6 @@
-# Features append names to nixpkgs.allowedUnfreePackages; one predicate checks them.
-# Several modules each setting allowUnfreePredicate would conflict.
 { config, lib, ... }:
 {
+  # Makes a new option to allow unfree packages
   options.nixpkgs.allowedUnfreePackages = lib.mkOption {
     type = lib.types.listOf lib.types.str;
     default = [ ];

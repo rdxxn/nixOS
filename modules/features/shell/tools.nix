@@ -17,6 +17,9 @@
       wget
       gping
       ripgrep
+      usbutils
+      pciutils
+      rsync
     ];
   };
 }

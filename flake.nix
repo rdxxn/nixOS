@@ -8,6 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     noctalia = {
       url = "github:noctalia-dev/noctalia";
@@ -17,6 +21,11 @@
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+  };
+
+  stylix = {
+    url = "github:nix-community/stylix/release-26.05";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

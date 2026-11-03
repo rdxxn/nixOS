@@ -11,7 +11,10 @@
     };
     fd.enable = true;
     eza.enable = true;
-    bat.enable = true;
+    bat = {
+      enable = true;
+      extraPackages = [ pkgs.bat-extras.batman ]; # bat but for man pages
+    };
     jq.enable = true;
   };
 }

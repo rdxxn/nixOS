@@ -4,8 +4,15 @@
     programs.neovim.enable = true;
     programs.vim.enable = true;
 
-    home.packages = [ pkgs.tree-sitter ];
+    home.packages = [ 
+      pkgs.tree-sitter
+      pkgs.lazygit
+      pkgs.lua-language-server
+      pkgs.stylua
+      pkgs.nil 
+      ];
   };
 
     # TODO - https://github.com/pfassina/lazyvim-nix use this nix flake for lazyvim maybe?
+    # OR MAYBE IN ~/dots/nvim/*
 }
