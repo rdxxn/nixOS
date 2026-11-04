@@ -7,7 +7,6 @@
       link = path: config.lib.file.mkOutOfStoreSymlink "${dots}/${path}";
     in
     {
-      # TODO - the other symlinks 
       # symlinks dots to a live checkout so noctalia and others can use/edit
       xdg.configFile = {
         "sway/config".source = link "sway/config";
