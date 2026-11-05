@@ -23,6 +23,10 @@
     };
   };
 
+  # TODO - fix steam popups being in the middle of the screen and stealing focus in niri
+
+
+  # TODO - FIX STYLIX OUTPUT
   stylix = {
     url = "github:nix-community/stylix/release-26.05";
     inputs.nixpkgs.follows = "nixpkgs";

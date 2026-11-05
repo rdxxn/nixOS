@@ -13,4 +13,12 @@
   services.fwupd.enable = true;
 
   system.stateVersion = "26.05";
+
+  # memory compression (not swap)
+  zramSwap {
+    enable = true;
+    memoryPercent = 25;
+    algorithm = "zstd";
+  }
+
 }

@@ -23,7 +23,17 @@
   };
 
   system.stateVersion = "26.05";
-
-  # TODO - fix steam popups being in the middle of the screen and stealing focus in niri
-
+  
+  boot.zswap = {
+    enable = true;
+    zpool = "zsmalloc";
+    maxPoolPercent = 25;
+    shrinkerEnabled = true;
+    compressor = "lz4"; # fastest compression with lowest latency (im not expecting to do too much ram intensive stuff)
+    acceptThresholdPercent = 90;
+  };
+  # "Because zram acts as a block device with a hard capacity limit in RAM,
+  # the kernel's native OOM killer can sometimes fail to trigger in time under heavy memory pressure,
+  # leading to severe system lockups" - NixOS wiki
+  systemd.oomd.enable = true;
 }
