@@ -15,6 +15,7 @@
     ./features/system/networking.nix
     ./features/system/printing.nix
     ./features/system/users.nix
+    ./features/system/yubikey.nix
 
     ./features/desktop/audio.nix
     ./features/desktop/dots.nix

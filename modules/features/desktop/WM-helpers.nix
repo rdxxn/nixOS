@@ -11,5 +11,6 @@
     grim
     slurp
     xdg-utils
+    swappy
   ];
 }
