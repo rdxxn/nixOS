@@ -32,8 +32,7 @@
     compressor = "lz4"; # fastest compression with lowest latency (im not expecting to do too much ram intensive stuff)
     acceptThresholdPercent = 90;
   };
-  # "Because zram acts as a block device with a hard capacity limit in RAM,
-  # the kernel's native OOM killer can sometimes fail to trigger in time under heavy memory pressure,
-  # leading to severe system lockups" - NixOS wiki
-  systemd.oomd.enable = true;
+  
+  # needed for lz4
+  boot.initrd.systemd.enable = true;
 }

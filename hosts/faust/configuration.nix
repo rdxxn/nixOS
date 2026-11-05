@@ -20,5 +20,8 @@
     memoryPercent = 25;
     algorithm = "zstd";
   }
-
+  # "Because zram acts as a block device with a hard capacity limit in RAM,
+  # the kernel's native OOM killer can sometimes fail to trigger in time under heavy memory pressure,
+  # leading to severe system lockups" - NixOS wiki
+  systemd.oomd.enable = true;
 }
