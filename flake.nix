@@ -21,14 +21,17 @@
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # TODO - unicode picker thing
+  # TODO - Sort btrfs subvolumes
 
-  stylix = {
-    url = "github:nix-community/stylix/release-26.05";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+
 
   outputs =
     { nixpkgs, ... }@inputs:
@@ -41,7 +44,6 @@
         nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs username; };
           modules = [
-            inputs.stylix.nixosModules.stylix
             ./modules
             ./hosts/${name}/configuration.nix
             { networking.hostName = name; }
@@ -51,9 +53,9 @@
     {
       nixosConfigurations = {
         mephistopholes = mkHost "mephistopholes";
+        faust = mkHost "faust";
       };
 
-      devShells.${system} = import ./devshells.nix nixpkgs.legacyPackages.${system};
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt;
     };
 }

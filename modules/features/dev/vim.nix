@@ -22,7 +22,7 @@
           defaultFgColor = [ "#cdd6f4" ];
         };
       };
-    }
+    };
 
     home.packages = [ 
       pkgs.tree-sitter

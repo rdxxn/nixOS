@@ -21,3 +21,6 @@ check:
 
 update:
     nix flake update
+
+switch:
+    nh os switch

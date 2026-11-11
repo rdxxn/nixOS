@@ -1,4 +1,4 @@
-{ pkgs, username, ...}
+{ pkgs, username, ... }:
 {
   xdg.portal = {
     enable = true;

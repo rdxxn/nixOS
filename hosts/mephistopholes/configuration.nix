@@ -21,8 +21,6 @@
     HandleLidSwitchExternalPower = "suspend";
     HandleLidSwitchDocked = "ignore";
   };
-
-  system.stateVersion = "26.05";
   
   boot.zswap = {
     enable = true;

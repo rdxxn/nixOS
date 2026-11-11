@@ -15,4 +15,9 @@
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", TAG+="uaccess"
   '';
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;  # look again when steam goes 64 bit
+  };
 }

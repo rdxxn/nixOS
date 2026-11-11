@@ -3,7 +3,7 @@
   imports = [
     ./features/nix/settings.nix
     ./features/nix/unfree.nix
-    ./features/nix/tooling.nix
+    ./features/nix/tools.nix
     ./features/nix/unstable.nix
 
     ./features/system/boot.nix
@@ -16,6 +16,7 @@
     ./features/system/printing.nix
     ./features/system/users.nix
     ./features/system/yubikey.nix
+    ./features/system/version.nix
 
     ./features/desktop/audio.nix
     ./features/desktop/dots.nix
@@ -45,11 +46,13 @@
     ./features/dev/toolchains.nix
     ./features/dev/vim.nix
 
+    ./features/apps/torrenting.nix
     ./features/apps/blender.nix
     ./features/apps/browser.nix
     ./features/apps/media.nix
     ./features/apps/mpv-tracker.nix
     ./features/apps/notes.nix
     ./features/apps/vpn.nix
+    ./features/apps/localsend.nix
   ];
 }

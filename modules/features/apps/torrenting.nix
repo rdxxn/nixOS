@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
-  pkgs.qBittorrent.enable = true;
+  home-manager.users.${username}.home.packages = [ pkgs.qbittorrent ];
+
+  networking.firewall = {
+    allowedTCPPorts = [ 6881 ]; # Actually need to double check
+    allowedUDPPorts = [ 6881 ];
+  };
 }
