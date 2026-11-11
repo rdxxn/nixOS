@@ -7,29 +7,18 @@
     enable = true;
 
     plugins = [
-      {
-        name = "bass"; # Runs bash commands by prefixing with bass
-        src = pkgs.fishPlugins.bass.src;
-      }
-      {
-        name = "done"; # notif when long command finishes
-        src = pkgs.fishPlugins.done.src;
-      }
-      {
-        name = "bang-bang"; # bash-style !! and !$ history expansion
-        src = pkgs.fishPlugins.bang-bang.src;
-      }
-      {
-        name = "sponge"; # removes mistyped commands from history
-        src = pkgs.fishPlugins.sponge.src;
-      }
+      # Runs bash commands by prefixing with bass
+      { name = "bass"; src = pkgs.fishPlugins.bass.src; }
+      # notif when long command finishes
+      { name = "done"; src = pkgs.fishPlugins.done.src; }
+      # bash-style !! and !$ history expansion
+      { name = "bang-bang"; src = pkgs.fishPlugins.bang-bang.src; }
+      # removes mistyped commands from history
+      { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
     ];
 
-    # allows it from dots with home manager
-    shellInit = ''
-      if test -r ~/dots/fish/config.fish
-        source ~/dots/fish/config.fish
-      end
+    interactiveShellInit = ''
+      set fish_greeting ""
     '';
 
     functions = {

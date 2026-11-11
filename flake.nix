@@ -23,7 +23,7 @@
     };
   };
 
-  # TODO - fix steam popups being in the middle of the screen and stealing focus in niri
+  # TODO - unicode picker thing
 
   stylix = {
     url = "github:nix-community/stylix/release-26.05";

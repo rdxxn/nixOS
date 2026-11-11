@@ -4,5 +4,10 @@
   home-manager.users.${username}.programs.yazi = {
     enable = true;
     package = pkgs.unstable.yazi;
+
+    theme = {
+      dark = "catppuccin";
+      light = "catppuccin";
+    };
   };
 }
