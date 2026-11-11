@@ -1,6 +1,6 @@
 { username, ...}:
 {
-  home-manager.users.{username}.programs.localsend.enable = true;
+  home-manager.users.${username}.programs.localsend.enable = true;
 
   networking.firewall = {
     allowedTCPPorts = [ 53317 ];

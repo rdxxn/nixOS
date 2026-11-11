@@ -5,7 +5,7 @@
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
-      PermitRoogLogin = "no";
+      PermitRootLogin = "no";
     };
   };
 

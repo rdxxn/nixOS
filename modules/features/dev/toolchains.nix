@@ -20,16 +20,15 @@
       junit
     ];
 
-  # additional MC jars come from prism launcher
-  programs.java = {
-    enable = true;
-    package = pkgs.jdk25;
-  };
-
     # lets dev shells load automatically when you cd into a project
     programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
     };
+  };
+  # additional MC jars come from prism launcher
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk25;
   };
 }

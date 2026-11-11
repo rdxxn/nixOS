@@ -6,7 +6,6 @@
     protontricks
     vulkan-tools
     mangohud
-    govulkaninfo          # if available; else vulkan-tools is enough
   ];
 
   services.flatpak.packages = [ "com.vysp3r.ProtonPlus" ];

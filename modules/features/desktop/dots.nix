@@ -22,7 +22,6 @@
         "lazygit/themes/red.yml".source = link "lazygit/themes/red.yml";
         "yazi/flavors/catppuccin.yazi/flavor.toml".source = link "yazi/flavors/catppuccin.yazi/flavor.toml";
         "yazi/flavors/catppuccin.yazi/tmtheme.xml".source = link "yazi/flavors/catppuccin.yazi/tmtheme.xml";
-        "zellij/config.kdl".source = link "zellij/config.kdl";
         "fastfetch/config.jsonc".source = link "fastfetch/config.jsonc";
       };
 

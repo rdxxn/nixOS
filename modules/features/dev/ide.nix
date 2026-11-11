@@ -1,2 +1,6 @@
-# TODO jetbrains IDEs 
-{ }
+{ pkgs, username, ... }:
+{
+  home-manager.users.${username}.home.packages = [
+    pkgs.jetbrains.idea-oss
+  ];
+}

@@ -45,6 +45,7 @@
     ./features/dev/podman.nix
     ./features/dev/toolchains.nix
     ./features/dev/vim.nix
+    ./features/dev/ide.nix
 
     ./features/apps/torrenting.nix
     ./features/apps/blender.nix
